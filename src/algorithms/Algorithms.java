@@ -23,20 +23,31 @@ public class Algorithms {
         }
         int[] arr2 = new int[100000];
         for (int i = 0; i < 100000; i++) {
-            arr2[i] = rn.nextInt(10000);
+            arr2[i] = rn.nextInt(1000);
+        }
+        int[] arr3 = new int[10000000];
+        for (int i = 0; i < 100000; i++) {
+            arr3[i] = rn.nextInt(1000);
         }
         long start = System.currentTimeMillis();
         InsertionSort is = new InsertionSort();
         is.sort(arr);
         long end = System.currentTimeMillis();
         end = (end - start) / 1000;
-        System.out.println("Insertion sort took " + end + " to complete");
+        System.out.println("Insertion sort took " + end + " seconds to complete");
         start = System.currentTimeMillis();
         SelectionSort ss = new SelectionSort();
         ss.sort(arr2);
         end = System.currentTimeMillis();
         end = (end - start) / 1000;
-        System.out.println("Selection sort took " + end + " to complete");
+        System.out.println("Selection sort took " + end + " seconds to complete");
+        start = System.currentTimeMillis();
+        MergeSort ms = new MergeSort();
+        ms.sort(arr3, new int[1000], 0, 999);
+        end = System.currentTimeMillis();
+        end = (end - start) / 1000;
+        System.out.println("Merge sort took " + end + " seconds to complete");
+        System.out.println(Arrays.toString(arr3));
     }
 
 }
